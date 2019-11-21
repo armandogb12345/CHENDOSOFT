@@ -1,0 +1,70 @@
+body{
+    background: url(../images/blog/blog-img-3.jpg) no-repeat  center center fixed;
+    background-size: cover;
+}
+
+.main-section{
+    margin: 0 auto;
+    margin-top: 25%;
+    padding: 0;
+}
+
+
+h1 { font-size: 44px; }
+
+h2 { font-size: 18px; }
+
+h3 { }
+
+.user-img{
+    margin-top: -30px;
+    margin-bottom: 25px; 
+}
+
+.user-img img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+.modal-content{
+    background-color: #642EFE;
+    opacity: .100%;
+    padding: 0 20px;
+    box-shadow: 0px 0px 8px #642EFE;
+}
+
+.form-group input{
+    height: 42px;
+    font-size: 22px;
+    border: 0;
+    padding-left: 54px;
+    border-radius: 10px;
+}
+
+.form-group::before{
+    font-family: "Times New Roman \ 5 Free";
+    position: absolute;
+    left: 28px;
+    font-size: 22px;
+    padding-top: 4px;
+}
+
+.form-group#user-group::before{
+    content: \f007;
+}
+
+.form-group#pass-group::before{
+    content: \f023;
+}
+
+button{
+    width: 90%;
+    height: 8%;
+    margin: 5px 0 25px;
+}
+
+.register{
+    padding: 5px 0;
+}

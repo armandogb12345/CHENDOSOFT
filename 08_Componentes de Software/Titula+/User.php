@@ -1,48 +1,83 @@
 <?php
 
 	class User {
-		private $id;
-		private $nombre;
-		private $password;
-		private $tipo;
+		private $idLogin;
+		private $Usuario;
+		private $Nombre;
+		private $Password;
+		private $Tipo;
+		private $Email;
+		private $NombreDep;
+		private $Puesto;
 
 		function __construct(){
-			$this->id = 0;
-			$this->nombre = null;
-			$this->password = null;
-			$this->tipo = 0;
+			$this->idLogin = 0;
+			$this->Usuario = null;
+			$this->Nombre = null;
+			$this->Password = null;
+			$this->Puesto = null;
+			$this->Tipo = 0;
+			$this->Email = null;
 		}
 
-		public function setId($id){
-			$this->id = $id;
+		public function setidLogin($idLogin){
+			$this->idLogin = $idLogin;
 		}
 
-		public function getId(){
-			return $this->id;
+		public function getidLogin(){
+			return $this->idLogin;
+		}
+		public function setUsuario($Usuario){
+			$this->Usuario = $Usuario;
 		}
 
-		public function setNombre($name){
-			$this->nombre = $name;
+		public function getUsuario(){
+			return $this->Usuario;
+		}
+		public function setNombreDep($NombreDep){
+			$this->NombreDep = $NombreDep;
+		}
+
+		public function getNombreDep(){
+			return $this->NombreDep;
+		}
+		public function setPuesto($Puesto){
+			$this->Puesto = $Puesto;
+		}
+
+		public function getPuesto(){
+			return $this->Puesto;
+		}
+
+		public function setNombre($Nombre){
+			$this->Nombre = $Nombre;
 		}
 
 		public function getNombre(){
-			return $this->nombre;
+			return $this->Nombre;
 		}
 
-		public function setpassword($pass){
-			$this->password = $pass;
+		public function setPassword($Password){
+			$this->Password = $Password;
 		}
 
-		public function getpassword(){
-			return $this->password;
+		public function getPassword(){
+			return $this->Password;
 		}
 
-		public function setTipo($type){
-			$this->tipo = $type;
+		public function setTipo($Tipo){
+			$this->Tipo = $Tipo;
 		}
 
 		public function getTipo(){
-			return $this->tipo;
+			return $this->Tipo;
+		}
+		public function setEmail($Email){
+			$this->Email = $Email;
+		}
+
+		public function getEmail(){
+			return $this->Email;
 		}
 	}
 ?>

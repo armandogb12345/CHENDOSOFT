@@ -1,0 +1,16 @@
+
+
+h1, h2, h3 {
+	margin: 0;
+	text-transform: uppercase;
+	font-family: "AR DELANEY", AR DELANEY, "AR DELANEY", AR DELANEY, serif;
+	font-weight: normal;
+	color: #7FFFD4;
+}
+
+h1 { font-size: 44px; }
+
+h2 { font-size: 18px; }
+
+h3 { }
+

@@ -1,10 +1,11 @@
 <?php
 @session_destroy();
 session_start();
-
 if(!empty($_POST['form-Usuario']) && !empty($_POST['form-Password'])){
     $_SESSION['id_sesion']="1";    
 }
+
+//Includes
 include_once "User.php";
 include_once "SQLConsultas.php";
 $sql = new SQLConsultas();
@@ -12,17 +13,17 @@ $sql = new SQLConsultas();
 if(!empty($_POST['form-Usuario']) && !empty($_POST['form-Password'])){
     
     $usuario=$_POST['form-Usuario'];
-    $password=$_POST['form-Password'];
-    $misRegistros = $sql->consultarUsuario($usuario,$password);
+    $Password=$_POST['form-Password'];
+    $misRegistros = $sql->consultarUsuario($usuario);
     if ($misRegistros != 0) {
-            $id = $misRegistros[0]->getId();
+            $id = $misRegistros[0]->getidLogin();
                 $nombre = $misRegistros[0]->getNombre();
                 $pass = $misRegistros[0]->getPassword();
                 $type = $misRegistros[0]->getTipo();
-                //}
-                //$password_desencriptada = base64_decode($pass);
-                //if ($password_desencriptada == $password) {
-                    echo '<script>window.location.href="index2.html?id='.$id.'&pass='.$pass.'&type='.$type.'&nombre='. $nombre.'";</script>'; 
+            	
+                $password_desencriptada = base64_decode($pass);
+                if ($password_desencriptada == $Password) {
+                    echo '<script>window.location.href="principal.php?id='.$id.'&type='.$type.'";</script>'; 
                 }else {
                     ?>
                     <script type="text/javascript">
@@ -30,7 +31,7 @@ if(!empty($_POST['form-Usuario']) && !empty($_POST['form-Password'])){
                     </script>
                     <?php } 
                 }
-            ?>
+            }?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +99,7 @@ if(!empty($_POST['form-Usuario']) && !empty($_POST['form-Password'])){
 			                        	<label class="sr-only" for="form-Password">Password</label>
 			                        	<input type="Password" name="form-Password" placeholder="Password..." class="form-Password form-control" id="form-Password">
 			                        </div>
-			                        <button type="submit" class="btn">Sign in!</button><a href="index2.html" class="hero_box_link">
+			                        <button type="submit" class="btn">Sign in!</button><a href="principal.php" class="hero_box_link">
 			                    </form>
 		                    </div>
                         </div>
@@ -106,11 +107,8 @@ if(!empty($_POST['form-Usuario']) && !empty($_POST['form-Password'])){
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 social-login">
                         	<h3></h3>
-                        	<div class="social-login-buttons">
-	                        	<a class="btn btn-link-1 btn-link-1-facebook" href="#">
-	                        		<i class="fa fa-user"></i> Register User
-	                               </a>
-                               </div>
+                        	
+
                         	</div>
                         </div>
         <!-- Javascript -->

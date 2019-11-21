@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 31-10-2019 a las 15:13:23
+-- Tiempo de generación: 20-11-2019 a las 21:15:00
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -31,12 +31,18 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `idAdmin` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) NOT NULL,
   `Puesto` varchar(45) NOT NULL,
   `Login_idLogin` int(11) NOT NULL,
   PRIMARY KEY (`idAdmin`),
   KEY `fk_Admin_Login1_idx` (`Login_idLogin`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`idAdmin`, `Puesto`, `Login_idLogin`) VALUES
+(2, 'Jefe de Divicion', 1);
 
 -- --------------------------------------------------------
 
@@ -144,12 +150,18 @@ CREATE TABLE IF NOT EXISTS `expediente` (
 DROP TABLE IF EXISTS `jefedepartamento`;
 CREATE TABLE IF NOT EXISTS `jefedepartamento` (
   `idJefeDepartamento` int(11) NOT NULL AUTO_INCREMENT,
-  `NombreJefe` varchar(45) NOT NULL,
   `NombreDep` varchar(45) NOT NULL,
   `Login_idLogin` int(11) NOT NULL,
   PRIMARY KEY (`idJefeDepartamento`),
   KEY `fk_JefeDepartamento_Login1_idx` (`Login_idLogin`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `jefedepartamento`
+--
+
+INSERT INTO `jefedepartamento` (`idJefeDepartamento`, `NombreDep`, `Login_idLogin`) VALUES
+(2, 'SubDirreccion', 4);
 
 -- --------------------------------------------------------
 
@@ -166,14 +178,17 @@ CREATE TABLE IF NOT EXISTS `login` (
   `Tipo` varchar(45) NOT NULL,
   `Email` varchar(45) NOT NULL,
   PRIMARY KEY (`idLogin`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `login`
 --
 
 INSERT INTO `login` (`idLogin`, `Usuario`, `Nombre`, `Password`, `Tipo`, `Email`) VALUES
-(1, 'Admin', 'Daniel Arredondo Salcedo', '12345', 'Administrador', 'daniels@cimat.mx');
+(1, 'Admin', 'Daniel Arredondo Salcedo', 'ZGFueTEyMzQ1', 'Administrador', 'daniels@cimat.mx'),
+(2, 'Armando', 'Jose Armando Gomez Benitez', 'MTIzNDU=', 'Estudiante', 'jarmandogb1@gmail.com'),
+(3, 'Nacho', 'Manuel Ignacio Salaz Guzman', 'MTIzNDU=', 'Docente', 'salasg@gmail.com'),
+(4, 'Jairo', 'Jairo isac lira', 'MTIzNDU=', 'Jefe de Departamento', 'jairoisac@gmail.com');
 
 --
 -- Restricciones para tablas volcadas

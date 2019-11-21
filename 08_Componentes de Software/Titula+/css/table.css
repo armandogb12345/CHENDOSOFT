@@ -1,0 +1,15 @@
+.table_info{
+    background: #19FC42;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 auto;
+    border: 1 solid;
+    font-family: "Algerian\ 5 Free";
+}
+
+.table_product{
+    font-weight: 500;
+    text-align: center;
+    margin: 0 auto;
+    border: 1 solid;
+}
