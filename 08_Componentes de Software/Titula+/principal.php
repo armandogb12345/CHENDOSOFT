@@ -186,22 +186,6 @@ if ($_GET["id"] != null &&
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?> 
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?> 
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -229,48 +213,16 @@ if ($_GET["id"] != null &&
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?> 
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?> 
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
 
                     <?php echo '<a class="btn btn-primary" href="registrarJ?id='.$id_user.'&type='.$type.'"><i class="fa fa-user"></i> Registrar Usuario</a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?> 
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?> 
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -296,22 +248,6 @@ if ($_GET["id"] != null &&
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?> 
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?> 
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -324,24 +260,6 @@ if ($_GET["id"] != null &&
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?> 
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
-                     <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?> 
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -369,6 +287,19 @@ if ($_GET["id"] != null &&
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="btn btn-primary" href="#?id='.$id_user.'&type='.$type.'"><i class="fas fa-coffee"></i>Respaldos y Restauraciones</a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?> 
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -383,6 +314,15 @@ if ($_GET["id"] != null &&
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?> 
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
+                     <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
