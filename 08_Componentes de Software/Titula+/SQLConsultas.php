@@ -152,6 +152,28 @@
 			return 0;
 		}
 	}
+	public function consultarRevisionInf($id){
+		$mysql = new MysqlConnector();
+		$mysql->Open();
+		$consulta="SELECT evaluacion.Criterios, evaluacion.Puntaje, documento.Titulo FROM expediente inner join estudiante inner join evaluacion inner join documento WHERE estudiante.Login_idLogin='$id' AND expediente.Estudiante_idEstudiante=estudiante.idEstudiante AND documento.Expediente_idExpediente=expediente.idExpediente AND evaluacion.Expediente_idExpediente=expediente.idExpediente";
+		$res=$mysql->Query($consulta);
+		$cont = 0;
+		$criterios;
+		$puntaje;
+		$titulo;
+		while($actual = mysqli_fetch_array($res)){
+			$criterios=$actual['Criterios'];
+			$puntaje=$actual['Puntaje'];
+			$titulo=$actual['Titulo'];
+			$cont++;
+		}
+		$mysql->Close();
+		if ($cont > 0) {
+			return array ($criterios, $puntaje, $titulo);
+		}else {
+			return 0;
+		}
+	}
 }
 ?>
 	 	 	 	 	 	 	 	 
