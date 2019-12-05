@@ -155,7 +155,12 @@
 	public function consultarRevisionInf($id){
 		$mysql = new MysqlConnector();
 		$mysql->Open();
-		$consulta="SELECT evaluacion.Criterios, evaluacion.Puntaje, documento.Titulo FROM expediente inner join estudiante inner join evaluacion inner join documento WHERE estudiante.Login_idLogin='$id' AND expediente.Estudiante_idEstudiante=estudiante.idEstudiante AND documento.Expediente_idExpediente=expediente.idExpediente AND evaluacion.Expediente_idExpediente=expediente.idExpediente";
+
+		$consulta="SELECT evaluacion.Criterios, evaluacion.Puntaje, documento.Titulo 
+		FROM expediente inner join estudiante inner join evaluacion inner join documento 
+		WHERE estudiante.Login_idLogin='$id' AND expediente.Estudiante_idEstudiante=estudiante.idEstudiante 
+		AND documento.idDocumento=evaluacion.Documento_idDocumento 
+		AND evaluacion.Expediente_idExpediente=expediente.idExpediente AND documento.Tipo='INF'";
 		$res=$mysql->Query($consulta);
 		$cont = 0;
 		$criterios;
@@ -170,6 +175,7 @@
 		$mysql->Close();
 		if ($cont > 0) {
 			return array ($criterios, $puntaje, $titulo);
+
 		}else {
 			return 0;
 		}

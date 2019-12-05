@@ -16,8 +16,8 @@ if ($_GET["id"] != null &&
     }
 $sql2 = new SQLConsultas();
 $datos=$sql2->consultarRevisionInf($id_user);
+
 list ($Criterios, $Puntaje, $Titulo) =$datos;
-  
 
 ?>
 <!Doctype html>
@@ -59,11 +59,18 @@ list ($Criterios, $Puntaje, $Titulo) =$datos;
             </thead>
             <tbody>
             <?php
+            //for($i=0; $i<$datos;$i++){
                 echo '<tr>';
-				echo '<td>'.$Titulo. '</td>';
-                echo '<td>'.$Puntaje.'</td>';
-                echo '<td>'.$Criterios.'</td>';
+               echo '<td>'.$Titulo.'</td>';
+                if($Puntaje==0){
+                    echo '<td>No aprobado</td>';
+                }else{
+                    echo '<td>Aprobado</td>';
+                }
+                
+               echo '<td>'.$Criterios.'</td>';
                 echo '</tr>';
+            //}
             ?>
             </tbody>
             </table>
