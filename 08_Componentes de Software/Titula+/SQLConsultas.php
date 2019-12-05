@@ -133,6 +133,14 @@
 			//echo "Login ". $consulta;
 			$res=$mysql->Query($consulta);
 		}
+
+		 public function ModificarUsuario2($id, $Usuario,$nombre, $Tipo, $email){
+			$mysql = new MysqlConnector();
+			$mysql->Open();
+			$consulta="update login set Usuario='".$Usuario."', Nombre='". $nombre ."', Tipo='" . $Tipo ."', Email='". $email."' where idLogin= ".$id; 
+			//echo "Login ". $consulta;
+			$resp=$mysql->Query($consulta);
+		}
 			
 	public function consultarUsuarioXID($id){
 		$mysql = new MysqlConnector();
