@@ -4,6 +4,9 @@ session_start();
 if(!empty($_POST['form-Usuario']) && !empty($_POST['form-Password'])){
     $_SESSION['id_sesion']="1";    
 }
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 //Includes
 include_once "User.php";
@@ -23,6 +26,8 @@ if(!empty($_POST['form-Usuario']) && !empty($_POST['form-Password'])){
             	
                 $password_desencriptada = base64_decode($pass);
                 if ($password_desencriptada == $Password) {
+                $_SESSION['idlogin'] = $id;
+                $_SESSION['type'] = $type;
                     echo '<script>window.location.href="principal.php?id='.$id.'&type='.$type.'";</script>'; 
                 }else {
                     ?>

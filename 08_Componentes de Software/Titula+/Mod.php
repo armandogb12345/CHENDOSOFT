@@ -10,8 +10,6 @@ if (!isset($_SESSION)) {
 $id_user = $_SESSION['idlogin'];
 $type = $_SESSION['type'];
 
-echo $id_user;
-echo $type;
 
 if (!empty($_GET['Usuario']) && !empty($_GET['Nombre']) && !empty($_GET['Tipo']) && !empty($_GET['Email']) ) {
     
@@ -35,7 +33,7 @@ if (!empty($_GET['Usuario']) && !empty($_GET['Nombre']) && !empty($_GET['Tipo'])
                     echo '<script type="text/javascript">
                     function redirige(){
                         alert("Modificaciones realizadas con exito"); 
-                    window.location.href="gestion_admin.php?id=$id_user&type=$type";
+                    window.location.href="gestion_admin.php?id='.$id_user.'&type='.$type.'";
                 }
                 window.onload=redirige; </script>';
                    
@@ -68,9 +66,10 @@ if (!empty($_GET['Usuario']) && !empty($_GET['Nombre']) && !empty($_GET['Tipo'])
                     echo '<script type="text/javascript">
                     function redirige(){
                         alert("Modificaciones realizadas con exito"); 
-                    window.location.href="gestion_admin.php?id=$id_user&type=$type";
+                    window.location.href="gestion_admin.php?id='.$id_user.'&type='.$type.'";
                 }
                 window.onload=redirige; </script>';
+
                     ?>
                      <?php
 
