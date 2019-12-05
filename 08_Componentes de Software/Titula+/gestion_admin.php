@@ -1,7 +1,9 @@
 <?php 
 include_once "SQLConsultas.php";
 //@session_destroy();
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 $sql = new SQLConsultas();
 if ($_SESSION['id_sesion'] == null|| $_SESSION['id_sesion'] == '' ) {   
     header("Location:index.php");
@@ -10,9 +12,13 @@ if ($_SESSION['id_sesion'] == null|| $_SESSION['id_sesion'] == '' ) {
 if ($_GET["id"] != null &&
     $_GET["id"] != '' &&
     $_GET["type"] != '' && $_GET["type"] != '') {
-    $id_user = $_GET["id"];
-    $type = $_GET["type"];
-    $username = $sql->consultarUsuarioXID($id_user);
+    $_SESSION['idlogin'] = $_GET["id"];
+    $_SESSION['type'] = $_GET["type"];
+    
+    $id_user = $_SESSION['idlogin'];
+    $type = $_SESSION['type'];
+    
+    //$username = $sql->consultarUsuarioXID($id_user);
     }
 ?>
 <!Doctype html>
@@ -40,7 +46,7 @@ if ($_GET["id"] != null &&
               
 
                 <?php //Si es Jefe de Departamento?>
-                <?php if($type == "Jefe de Departamento"){?>
+                <?php if($_SESSION['type'] == "Jefe de Departamento"){?>
                 	<?php echo '<a class="btn btn-primary" href="consultarjefe.php?id='.$id_user.'&type='.$type.'"><i class="fas fa-user"></i> Perfil</a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -180,12 +186,15 @@ if ($_GET["id"] != null &&
 
 
 
-                     <?php //Si es administrador?>
+                     
+
                 <?php } else if($type == "Administrador"){ ?>
-                    
+                    <?php echo  "administrador";?>
                      
-                     <?php echo '<a href="principal.php?id='.$id_user.'&type='.$type.'"><i class="fas fa-home"></i> Inicio</a>';?>
-                     
+                     <?php
+
+                     echo '<a href="principal.php?id='.$id_user.'&type='.$type.'">
+                    <i class="fas fa-home"></i>Inicio</a>';?>
 
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -514,7 +523,7 @@ if ($_GET["id"] != null &&
 
                       
                       <?php //Si es Estudiante?>
-                    <?php } else if($type == "Estudiante"){ ?>
+                    <?php } else if($_SESSION['type'] == "Estudiante"){ ?>
                     <?php echo '<a class="btn btn-primary" href="#?id='.$id_user.'&type='.$type.'"><i class="fas fa-user"></i> Perfil</a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -633,7 +642,7 @@ if ($_GET["id"] != null &&
 
                      
                      <?php //Si es Docente?>
-                    <?php }else if($type == "Docente"){ ?>
+                    <?php }else if($_SESSION['type'] == "Docente"){ ?>
                      <?php echo '<a class="btn btn-primary" href="#?id='.$id_user.'&type='.$type.'"><i class="fas fa-user"></i> Perfil</a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
@@ -903,7 +912,7 @@ if ($_GET["id"] != null &&
 		$bd="bd_tsp";
 	?>
         
-        <form method="GET" action="gestion_user.php">
+        <form method="GET" action="Mod.php">
 		<?php
 		if(!isset($_GET['idLogin']) && (!isset($_GET['actualizado']))){
 			$conexion = mysqli_connect($servidor,$usuario,$clave,$bd);
@@ -927,7 +936,9 @@ if ($_GET["id"] != null &&
 			  while($r = mysqli_fetch_array($resultado)){
 				echo "<tr><td>";
                 echo "<center>";
-				echo "<input type=\"radio\" value=\"".$r['idLogin']."\" name=\"id\">".$r['idLogin'];
+				echo "<input type=\"radio\"   value=\"".$r['idLogin']."\" name=\"idlogin\">".$r['idLogin'];
+                  $temp =$r['idLogin'];
+                  
 			  	echo "</td><td>".$r['Usuario']."</td>";
 				echo "<td>".$r['Nombre']."</td>";
                 echo "<td>".$r['Tipo']."</td>";
@@ -937,12 +948,14 @@ if ($_GET["id"] != null &&
                 //Cumple funcionamiento 
 			echo "<tr><td colspan=\"5\" align=\"center\">";
 			//echo "<center><input type=\"submit\" value=\"Modificar\">";
-                echo "<button name=\"actualizado\" style=\"align-content: center;\" type=\"submit\" class=\"btn btn-secondary btn-lg active\">Modificar</button>";
+                    echo "<button name=\"actualizado\" style=\"align-content: center;\" type=\"submit\" class=\"btn btn-secondary btn-lg active\" >Modificar</button>";
+                    
+                
 			echo "</table>";
 			}
 			mysqli_close($conexion);
 		} if(isset($_GET['idLogin']) && (!isset($_GET['actualizado']))) {
-			$id = $_GET['id'];
+			$id = $_GET['idLogin'];
 			$conexion = mysqli_connect($servidor,$usuario,$clave,$bd);
             $consulta = "SELECT * FROM login WHERE idLogin=".$id;
             $resultado = mysqli_query($conexion,$consulta);
@@ -1010,30 +1023,7 @@ if ($_GET["id"] != null &&
 			echo "<input type=\"submit\" value=\"Guardar\">";
 		} if (isset($_GET['actualizado'])){
 			//Updating record on city
-            $id = $_GET['id'];
-            $Usuario = $_GET['nombre'];
-            $nombre = $_GET['nombre'];
-            $codigo = $_GET['codigo'];
-            $distrito = $_GET['distrito'];
-            $poblacion = $_GET['poblacion'];
             
-            $servidor="localhost";
-            $usuario="root";
-            $clave="";
-            $bd="world";
-            
-		    $conexion = mysqli_connect($servidor,$usuario,$clave,$bd);
-            
-            if(!$conexion){
-                echo "Error al conectar" . PHP_EOL;
-            }else{
-                $consulta = "UPDATE login SET Name='$nombre', CountryCode='$codigo', District='$distrito', Population = '$poblacion' WHERE ID =".$id;
-                echo "<br><br><br>";
-                echo "<center><br><br><h1>Los cambios se guardaron con exito</h1></center>";
-                $resultado=mysqli_query($conexion,$consulta);
-                mysqli_close($conexion);
-                echo "<a href=\"Modificar.php\">Seguir Modificando</a>";
-            }
 		}
 		?>
 		</form>
