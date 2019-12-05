@@ -64,14 +64,14 @@
             
             <br> <br> <br> <br>
 
-            <h2 style="font-size: 24px" align="right"> 
+            <h2 style="font-size: 24px; color: rgb(255, 249, 228);" align="right"> 
             	TITULO:	<?php echo $TituloProyecto; ?> 
             	<a href="verINF.php?Titulo=<?php echo $TituloProyecto;?>"> 
             		<img src="download.jpg" style='width: 20px; font-size:20px'> 
             	</a> 
             </h2> 
 
-			Estatus:
+			<p style="color: rgb(255, 249, 228);"> Estatus: </p>
 			<br> <br>
 
 			<select name="Puntaje" onchange="habilitar(this)" style='width: 600px; font-size:20px'>
@@ -82,7 +82,7 @@
 
 			<br> <br> <br> <br>
 
-			Correcciones:
+			<p style="color: rgb(255, 249, 228);"> Correcciones: </p>
 			<br> <br>
 
 			<textarea name="correcciones" id="correcciones" rows="15" cols="98" style="resize: none;" placeholder="Menciona cu&aacute;les correciones hay que atender en el documento"></textarea>

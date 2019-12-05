@@ -19,7 +19,7 @@
             
             <br> <br> <br> <br>
 
-            <h2 style="font-size: 44px" align="center"> Selecciona un proyecto </h2>
+            <h2 style="font-size: 44px; color: rgb(255, 249, 228);" align="center" > Selecciona un proyecto </h2>
 
 
             <?php $ID = $_GET['id']; $Type = $_GET['type'];?>

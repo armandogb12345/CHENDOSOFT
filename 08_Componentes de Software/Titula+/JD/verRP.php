@@ -80,13 +80,14 @@
             ?>
             <input type="hidden" name="NombreJefe" value="<?php echo $renglonNom['Nombre']; ?>" id="NombreJefe">
 
-            Nombre del Proyecto: <input type="text" name="NomProy" id="NomProy" style="width:1070px; height:40px;">
+            <p style="color: rgb(255, 249, 228);"> Nombre del Proyecto: </p> <input type="text" name="NomProy" id="NomProy" style="width:1070px; height:40px;">
 
-            Nombre del Departamento: <input type="text" name="NomDep" id="NomDep" style="width:1070px; height:40px;">
+            <p style="color: rgb(255, 249, 228);"> Nombre del Departamento: </p> <input type="text" name="NomDep" id="NomDep" style="width:1070px; height:40px;">
 
-            Lugar: <input type="text" name="Lugar" id="Lugar" style="width:1070px; height:40px;">
+            <p style="color: rgb(255, 249, 228);"> Lugar: </p> <input type="text" name="Lugar" id="Lugar" style="width:1070px; height:40px;">
 
-			Carrera: <br> <br>
+			<p style="color: rgb(255, 249, 228);"> Carrera: </p> <br>
+			
 			<select name="Carrera" style="width: 600px; font-size:20px" >
 				<option value="0"> Selecciona Carrera </option>
 				<option value="Ingenieria en Administracion"> Ingenieria en Administracion </option>
@@ -100,7 +101,7 @@
 
 			<br> <br>
 
-			Selecciona Asesor (es): <br> <br>
+			<p style="color: rgb(255, 249, 228);"> Selecciona Asesor (es): </p> <br>
 
 			<table border="1" align="center" id="cajasAs">
 				<tr>
@@ -113,7 +114,7 @@
 	    	</table>
 	    	<br> <br> <br>
 
-	    	Ingresa Alumnos (s): <br> <br>
+	    	<p style="color: rgb(255, 249, 228);"> Ingresa Alumnos (s): </p> <br> <br>
 
 			<table border="1" align="center" id="cajas">
 				<tr>
@@ -129,7 +130,7 @@
 	    	</table>
 	    	<br> <br> <br>
 
-	    	Observaciones: <br> <br>
+	    	<p style="color: rgb(255, 249, 228);"> Observaciones: </p> <br> <br>
 				<textarea name="Observaciones" rows="15" cols="175" style="resize: none;" placeholder="Menciona cu&aacute;les observaciones hay que aclarar en el documento"></textarea>
 				<br>
 
