@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 include_once "SQLConsultas.php";
 //@session_destroy();
 session_start();
@@ -66,8 +66,8 @@ if ($_GET["id"] != null &&
             <thead >
                 <tr>
                 <th scope="col">Documento</th>
-                <th scope="col">Estado</th>
                 <th scope="col">Observaciones</th>
+                <th scope="col">Estado</th>
                 <th scope="col">Docente</th>
                 </tr>
             </thead>
