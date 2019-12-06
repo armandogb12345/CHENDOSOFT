@@ -390,7 +390,7 @@ if ($_GET["id"] != null &&
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
 
-                     <?php echo '<a class="btn btn-primary" href="#?id='.$id_user.'&type='.$type.'"><i class="fas fa-coffee"></i>Resultados de Revisiones</a>';?>
+                     <?php echo '<a class="btn btn-primary" href="consultarEstatusInforme?id='.$id_user.'&type='.$type.'"><i class="fas fa-coffee"></i>Resultados de Revisiones</a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>
                      <?php echo '<a class="" href=""></a>';?>

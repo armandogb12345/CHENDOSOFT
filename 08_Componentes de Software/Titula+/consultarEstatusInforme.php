@@ -14,23 +14,18 @@ if ($_GET["id"] != null &&
     $type = $_GET["type"];
     $username = $sql->consultarUsuarioXID($id_user);
     }
-$sql2 = new SQLConsultas();
-$datos=$sql2->consultarRevisionInf($id_user);
-
-list ($Criterios, $Puntaje, $Titulo) =$datos;
-
 ?>
 <!Doctype html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Revisión informe</title>
+        <title>Revisión informe y requisitos</title>
         <script src="js/jquery-latest.js"></script>
        <!-- <script src="js/header.js"></script> -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Principal</title>
+        <title>Revision Informe y requisitos</title>
         <script src="js/jquery.min.js"></script>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
@@ -42,35 +37,55 @@ list ($Criterios, $Puntaje, $Titulo) =$datos;
     <body  style="background: url('images/milestones_background.jpg');">
         <header class= "header">
                 <nav>
-                <a href="#"><label>Resultado de su revisión - <?php echo $username; ?></label> </a>
+                <a href="#"><label>Resultados de su revisión - <?php echo $username; ?></label> </a>
 
                 <a href="cerrar_sesion.php"  class="btn btn-primary">
                         <i class="fas fa-power-off"></i> Cerrar sesión</a>
                 </nav>
         </header>
         <br><br><br>
+        <?php
+
+        echo $type;
+        echo $id_user;       
+        $servidor="localhost";
+		$usuario="root";
+		$clave="root";
+		$bd="bd_tsp";
+        //$idlogin = $_GET['idlogin'];
+	    $conexion = mysqli_connect($servidor,$usuario,$clave,$bd);
+        $consulta="SELECT evaluacion.Criterios, evaluacion.Puntaje, documento.Titulo, docente_has_expediente.Tipo 
+		FROM expediente inner join estudiante inner join evaluacion inner join documento inner join docente_has_expediente
+		WHERE estudiante.Login_idLogin='$id_user' AND expediente.Estudiante_idEstudiante=estudiante.idEstudiante 
+		AND documento.idDocumento=evaluacion.Documento_idDocumento 
+		AND evaluacion.Expediente_idExpediente=expediente.idExpediente 
+        AND docente_has_expediente.Docente_idDocente=evaluacion.Docente_idDocente";
+        $resultado = mysqli_query($conexion,$consulta);
+        ?>
         <table class="table table-striped table-dark">
             <thead >
                 <tr>
                 <th scope="col">Documento</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Observaciones</th>
+                <th scope="col">Docente</th>
                 </tr>
             </thead>
             <tbody>
             <?php
-            //for($i=0; $i<$datos;$i++){
-                echo '<tr>';
-               echo '<td>'.$Titulo.'</td>';
-                if($Puntaje==0){
-                    echo '<td>No aprobado</td>';
-                }else{
-                    echo '<td>Aprobado</td>';
+                if(mysqli_num_rows($resultado)>0){
+                    while($r = mysqli_fetch_array($resultado)){
+                        echo '<tr>';
+                        echo '<td>'.$r['Titulo'].'</td>';
+                        echo '<td>'.$r['Criterios'].'</td>';
+                        if($r['Puntaje']==0){
+                            echo '<td>No aprobado</td>';
+                        }else{
+                            echo '<td>Aprobado</td>';
+                        }
+                        echo '<td>'.$r['Tipo'].'</td>';
+                    }
                 }
-                
-               echo '<td>'.$Criterios.'</td>';
-                echo '</tr>';
-            //}
             ?>
             </tbody>
             </table>
