@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 05-12-2019 a las 04:31:40
+-- Tiempo de generación: 10-12-2019 a las 21:02:29
 -- Versión del servidor: 5.7.23
 -- Versión de PHP: 7.2.10
 
@@ -35,19 +35,22 @@ CREATE TABLE IF NOT EXISTS `evaluacion` (
   `Puntaje` decimal(3,0) NOT NULL,
   `Expediente_idExpediente` int(11) NOT NULL,
   `Documento_idDocumento` int(11) NOT NULL,
+  `Docente_idDocente` int(11) NOT NULL,
   PRIMARY KEY (`idEvaluacion`),
   KEY `fk_Evaluacion_Expediente1_idx` (`Expediente_idExpediente`),
-  KEY `Documento_idDocumento` (`Documento_idDocumento`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  KEY `Documento_idDocumento` (`Documento_idDocumento`),
+  KEY `Docente_idDocente` (`Docente_idDocente`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `evaluacion`
 --
 
-INSERT INTO `evaluacion` (`idEvaluacion`, `Criterios`, `Puntaje`, `Expediente_idExpediente`, `Documento_idDocumento`) VALUES
-(1, 'Hacen falta datos', '0', 1, 1),
-(2, 'Muy bien', '1', 1, 2),
-(3, 'No revisado', '0', 1, 3);
+INSERT INTO `evaluacion` (`idEvaluacion`, `Criterios`, `Puntaje`, `Expediente_idExpediente`, `Documento_idDocumento`, `Docente_idDocente`) VALUES
+(1, 'Hacen falta datos', '0', 1, 1, 1),
+(2, 'Muy bien', '1', 1, 2, 1),
+(3, 'No revisado', '0', 1, 3, 1),
+(4, 'Redaccion', '0', 1, 1, 2);
 
 --
 -- Restricciones para tablas volcadas
