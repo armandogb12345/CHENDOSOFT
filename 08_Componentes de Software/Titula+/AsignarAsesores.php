@@ -38,26 +38,22 @@ $servidor = "localhost";
         || !$mysqli->query($insertar2)
         ||!$mysqli->query($insertar3))  {
         echo "Falló la inserción de la tabla: (" . $mysqli->errno . ") " . $mysqli->error;
-    }
-        
-
-        
-       
-        
-        
-
-        echo "<h2>Registro almacenado</h2>";
-
-        //header("Location:principal.php");
-        
-        }else {
-            echo 'script type ="text/javascript">
+    }else {
+            echo '<script type ="text/javascript">
             function redirige(){
-                   alert("Usuarios de docentes duplicados");
+                   alert("Asesores y Revisores Agregados");
                    window.location.href="AsignarAsesoresRevisores.php?id='.$id_user.'&type='.$type.'";
                 }  
                 window.onload=redirige;</script>';
         }
+    } else {
+        echo '<script type ="text/javascript">
+            function redirige(){
+                   alert("Asesores y Revisores duplicados");
+                   window.location.href="AsignarAsesoresRevisores.php?id='.$id_user.'&type='.$type.'";
+                }  
+                window.onload=redirige;</script>';
+    }
 
 
 
