@@ -75,6 +75,7 @@ if ($_GET["id"] != null &&
                         echo '<td>'.$r['NombreEstudiante'].'</td>';
                         echo '<td>'.$r['Carrera'].'</td>';
                         echo '<td>'.$r['Validado'].'</td>';
+                        echo '<td>'.$r['Contenido'].'</td>';
                     }
                 }
             ?>
